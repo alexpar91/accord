@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+.wrapper {
+	width: 700px;
+	margin: 50px auto;
+}
+
+.accordion-item {
+	position: relative;
+}
+
+.accordion-item__input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.accordion-item__title {
+	display: block;
+	background-color: rgb(15, 6, 113);
+	padding: 10px;
+	border-radius: 5px;
+	color: aliceblue;
+	margin-bottom: 2px;
+}
+
+.accordion-item__title::after {
+	content: "+";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
+	font-size: 20px;
+	font-weight: bold;
+
+}
+
+.accordion-item__title:hover {
+	cursor: pointer;
+}
+
+
+.accordion-item__content {
+	padding: 10px;
+	display: none;
+}
+
+
+
+.accordion-item__input:checked~.accordion-item__content {
+	display: block;
+}
+
+
+
+.accordion-item__input:checked~.accordion-item__title::after {
+	content: "\2014";
+	position: absolute;
+	top: 0;
+	transform: translateY(50%);
+	right: 18px;
+	font-size: 16px;
+	font-weight: bold;
+}
